@@ -1,0 +1,12 @@
+header {
+  background-color: #ff9999
+}
+ body {
+   background-color:  #ffe6e6
+ }
+
+img {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+}

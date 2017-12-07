@@ -27,18 +27,6 @@ if (iowa === 'y' || iowa === 'yes') {
   alert('Why do we keep having to go over this... Y/N or Yes/No...');
   }
 
-var xmas = prompt('I love me some Christmas music...');
-console.log('user didn\'t know my hatred of xmas music', xmas);
-xmas = xmas.toLowerCase();
-
-if (xmas === 'y' || xmas === 'yes') {
-  alert('NO! Christmas music harshes my mellow!');
-} else if {
-  alert('Dat\'s wassup');
-} else {
-  alert('This is a YES or NO situation, same as before...');
-}
-
 var bread = prompt('Bread makes you fat.');
 console.log('Bread makes you fat:', bread);
 bread = bread.toLowerCase();
@@ -57,4 +45,56 @@ if (code === 'y' || code === 'yes') {
   alert('Yeah...yeah...totally...');
 } else {
   ('Whaaaaaaaat... you crazy...');
+}
+
+//next code block is random number guessing Game
+
+var answer = Math.floor((Math.random() * 100) +1);
+var number;
+var counter = 1;
+console.log('Randomized answer:', answer);
+
+while (number !== answer) {
+  number = parseInt(prompt('What is your fav number?'));
+
+  if (number < answer) {
+    alert('Sorry, you were too low');
+    counter++;
+  } else if (number > answer) {
+    alert('Sorry, you were too high');
+    counter++;
+  } else if (isNaN(number) || number === null) {
+    alert('please enter a number');
+    counter++;
+  }
+}
+
+console.log('counter:', counter);
+
+//last code block is (broken) array guessing game
+
+var catz = ['wednesday','moritz','elliot','simone','sebastian'];
+var flag;
+var guess = 1;
+
+while(guess < 7) {
+  var arrGame.toLowerCase() = prompt('Can you guess any of the names of the SEVERAL cats I\'ve owned in my life?');
+
+
+for(var i = 0; i < catz.length; i++) {
+  console.log('each item at each iteration:', catz[i]);
+
+
+if (arrGame.toLowerCase() === catz[i]) {
+  alert('Nailed it!');
+  flag = true;
+  break;
+
+  }
+}
+
+if (!flag) {
+  alert('Naw man, naw...');
+  counter++;
+}
 }
