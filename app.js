@@ -55,7 +55,7 @@ var counter = 1;
 console.log('Randomized answer:', answer);
 
 while (number !== answer) {
-  number = parseInt(prompt('What is your fav number?'));
+  number = parseInt(prompt('I\'m thinking of a number 1-100. That is it?'));
 
   if (number < answer) {
     alert('Sorry, you were too low');
@@ -66,6 +66,8 @@ while (number !== answer) {
   } else if (isNaN(number) || number === null) {
     alert('please enter a number');
     counter++;
+  } else if (number === answer) {
+    alert('That\'s right! The number was ' + answer + ', and it took you ' + counter + ' guesses to get it!');
   }
 }
 
@@ -74,27 +76,31 @@ console.log('counter:', counter);
 //last code block is (broken) array guessing game
 
 var catz = ['wednesday','moritz','elliot','simone','sebastian'];
-var flag;
-var guess = 1;
+var guessLeft = 5;
 
-while(guess < 7) {
-  var arrGame.toLowerCase() = prompt('Can you guess any of the names of the SEVERAL cats I\'ve owned in my life?');
+while(guessLeft > 0) {
+  var arrGame = prompt('Can you guess any of the names of the SEVERAL cats I\'ve owned in my life?');
 
 
 for(var i = 0; i < catz.length; i++) {
   console.log('each item at each iteration:', catz[i]);
+  console.log('Number of guesses left:', guessLeft);
 
 
 if (arrGame.toLowerCase() === catz[i]) {
   alert('Nailed it!');
-  flag = true;
+  guessLeft = -1;
   break;
-
   }
 }
 
-if (!flag) {
-  alert('Naw man, naw...');
-  counter++;
+if (arrGame !== catz[i]) {
+  alert('Naw man, naw... you have ' + guessLeft + ' guesses left.');
+  guessLeft--;
 }
+
+if (guessLeft === 0) {
+  alert('Sorry, you didn\'t guess any of my cats. Their names are Wednesday, Moritz, Elliot, Simone, and Sebastian');
+}
+
 }
