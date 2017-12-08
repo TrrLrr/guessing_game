@@ -85,15 +85,15 @@ function numberGame() {
 function catName() {
 
   var catz = ['wednesday','moritz','elliot','simone','sebastian'];
-  var guessLeft = 5;
+  var guessLeft = 6;
 
   while(guessLeft > 0) {
     var arrGame = prompt('Can you guess any of the names of the SEVERAL cats I\'ve owned in my life?');
+    console.log('Number of guesses left:', guessLeft);
 
 
     for(var i = 0; i < catz.length; i++) {
       console.log('each item at each iteration:', catz[i]);
-      console.log('Number of guesses left:', guessLeft);
 
 
       if (arrGame.toLowerCase() === catz[i]) {
@@ -103,14 +103,13 @@ function catName() {
       }
     }
 
-    if (arrGame !== catz[i]) {
-      alert('Naw man, naw... you have ' + guessLeft + ' guesses left.');
-      guessLeft--;
-    }
+    guessLeft--;
 
     if (guessLeft === 0) {
-      alert('Sorry, you didn\'t guess any of my cats. Their names are Wednesday, Moritz, Elliot, Simone, and Sebastian');
+      alert('Sorry, you didn\'t guess any of my cats. Their names are Wednesday, Moritz, Elliot, Simone, and Sebastian.');
+    } else {
+      alert('Naw man, naw... you have ' + guessLeft + ' guesses left.');
     }
-
   }
+
 }
