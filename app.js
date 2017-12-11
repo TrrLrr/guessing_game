@@ -1,5 +1,13 @@
 'use strict';
 
+function tayQuiz() {
+  askName();
+  whereFrom();
+  aboutBread();
+  lastQuestion();
+}
+
+
 function askName() {
   var name = prompt('Ok, first thing\'s first, what\'s your name?');
   console.log('My users name:', name);
@@ -54,6 +62,8 @@ function lastQuestion () {
     ('Whaaaaaaaat... you crazy...');
   }
 }
+
+
 //next code block is random number guessing Game
 function numberGame() {
 
